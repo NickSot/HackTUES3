@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+/*Background color*/
+body {
+    background-color: #66b3ff;
+}
+</style>
+<style>
+@font-face { font-family: Reef; src: url('reef.otf'); } 
+h2 {
+font-family: Reef
+}
+</style>
+
+<style>
+bbb {
+    font-size: 250%;
+    font-style: italic;
+}
+
+</style>
+
+
+
+<style>
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: none;
+    background-color: #333;
+}
+
+
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+		color: white;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: red;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: red;
+}
+
+.tab2 {
+	float: right;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+		
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openSomething(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openSomething(event, 'News')">News</button>
+  <button class="tablinks" onclick="openSomething(event, 'Languages')">Languages</button>
+	<div class="tab2">
+		<button class='tablinks' onclick ="openSomething(event, 'Signin')">Sign in</button>
+		<button class='tablinks' onclick ="openSomething(event, 'login')">Log in</button>
+		<button class='tablinks' onclick ="openSomething(event, 'Profile')">Profile</button>
+	</div>
+</div>
+<center><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t34.0-12/17495814_1254250987984139_740816289_n.png?oh=281eddd61809391c151bdf8aaa7a9245&oe=58D8B653" style="width:422px;height:219px;"></center>
+
+<center><b><br><h2>Wire is a social service that facilitates the exchange of experience and information between different programmers. It is verry easy to use it. </h2></br></b></center>
+
+<div id="Home" class="tabcontent">
+  <h1>Wire</h1>
+  <div style="color:white;padding:0px;">
+	
+	<br><bbb><center>The future is in programming-Learn to program.</center></bbb></br>
+	<br><h3>Here are few reasons:</h3></br>
+	<br>1. I work less but earn more</br>
+	<br>2. I have free time for hobbies and interests</br>
+	<br>3. I can easily start or join a startup or side business</br>
+	<br>4. I am surrounded by successful people</br>
+	<br>5. Will improve logical thinking</br>
+	
+	
+	
+	
+	
+	
+	
+	</div>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>something</p> 
+</div>
+
+<div id="Languages" class="tabcontent">
+  <h3>something</h3>
+  <p>something</p>
+</div>
+
+<script>
+function openSomething(evt, somethingName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(somethingName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+     
+</body>
+</html> 
