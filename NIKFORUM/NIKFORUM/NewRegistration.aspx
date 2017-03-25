@@ -6,6 +6,10 @@
 <head runat="server">
     <title></title>
     <style type="text/css">
+        body 
+        {
+            background-image: 
+        }
         .style2
         {
             width: 167px;
@@ -39,16 +43,16 @@
     <div id="divHeader" style="height: 80px; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8;">
         <div id="divHeader1" style="position: relative; text-align: right; height: 80px; width:1200px; display: inline-block;">
             <div id="divHeaderInner" style="background-color: white; position: relative; height: 80px; width:150px; border-radius:15px; display: inline-block;">
-                <br />
-                <br />
-                <br />
-                <br />
+                <br/>
+                <br/>
+                <br/>
+                <br/>
         </div>
         </div>
       
     </div>
     <div id="divRegister" style="height: 100%; width: 100%; position: relative; top: 120px; text-align: center; z-index: 10000; opacity: 0.8;">
-        <div style="background-color: blue; position: relative; top: 25%; height: 250px; width:400px; border-radius:15px; display: inline-block;">
+        <div style="background-color: #333; position: relative; top: 25%; height: 250px; width:400px; border-radius:15px; display: inline-block;">
             <table style="width: 100%; height: 228px;">
                 <tr>
                     <td class="style6">

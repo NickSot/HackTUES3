@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="NIKFORUM.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AllQuestions.aspx.cs" Inherits="NIKFORUM.AllQuestions" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <style type="text/css">
 body {
@@ -332,7 +332,7 @@ font-family: Prime Regular
                         &nbsp;</td>
                     <td class="style2">
                         <asp:Button ID="btnClose" runat="server" Text="Close" 
-                            onclientclick="hideLogin();" />
+                            onclientclick="hideLogin();" onclick="hideLogin()" />
                     </td>
                     <td>
                         <asp:Button ID="btnLogin" runat="server" Height="28px" style="margin-left: 0px" 
@@ -365,7 +365,8 @@ font-family: Prime Regular
                     &nbsp;</td>
                 <td>
                     <asp:GridView ID="GridQuestions" runat="server" AutoGenerateColumns="False" 
-                        DataSourceID="SqlQuestions" Width="1218px">
+                        DataSourceID="SqlQuestions" Width="1218px" 
+                        onselectedindexchanged="GridQuestions_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Id">
                             <ItemStyle Width="1px" Font-Size="1pt" />

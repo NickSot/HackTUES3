@@ -9,36 +9,39 @@ using System.Data.SqlClient;
 
 namespace NIKFORUM
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class AllQuestions : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlQuestions.ConnectionString = Middle.sqlConnectionString;
-            SqlQuestions.SelectCommand = "SELECT Top 5 Id, SubjectNick, SubjectDate, PostSubject from RPost order by id desc";
+            SqlQuestions.SelectCommand = "SELECT Id, SubjectNick, SubjectDate, PostSubject from RPost order by id desc";
             GridQuestions.DataBind();
 
             int counter = 0;
 
-            for (int i = 0; i < GridQuestions.Rows.Count; i++, counter++) {
+            for (int i = 0; i < GridQuestions.Rows.Count; i++, counter++)
+            {
                 ((LinkButton)GridQuestions.Rows[i].FindControl("LBtnAnswer")).CommandArgument = GridQuestions.Rows[i].Cells[0].Text;
-                
+
             }
 
-                if (!IsPostBack)
+            if (!IsPostBack)
+            {
+                if (Session["username"] == null)
                 {
-                    if (Session["username"] == null)
-                    {
-                        Session["username"] = "";
-                        Session["isLogged"] = "N";
-                    }
+                    Session["username"] = "";
+                    Session["isLogged"] = "N";
                 }
+            }
             this.lblLogin.Text = Session["username"].ToString();
 
-            if (Session["IsLogged"].ToString() == "Y") {
+            if (Session["IsLogged"].ToString() == "Y")
+            {
                 this.lbtnLogin.Text = "Logout";
                 this.lBtnRegister.Visible = false;
             }
-            else {
+            else
+            {
                 this.lbtnLogin.Text = "Login";
                 this.lBtnRegister.Visible = true;
             }
@@ -46,17 +49,17 @@ namespace NIKFORUM
 
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
-            if (this.lbtnLogin.Text == "Logout") {
+            if (this.lbtnLogin.Text == "Logout")
+            {
                 Session["isLogged"] = "N";
                 Session["username"] = "";
                 this.lbtnLogin.Text = "Login";
                 this.lblLogin.Text = "";
                 this.lBtnRegister.Visible = true;
             }
-           
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void GridQuestions_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
             SqlDataAdapter Da = new SqlDataAdapter("SELECT * from RUser where UserNick = '" + this.TxtUser.Text + "' and UserPass = '" + this.TxtPass.Text + "'", Middle.getConnection());
@@ -67,7 +70,8 @@ namespace NIKFORUM
                 ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "showLoginA();", true);
                 return;
             }
-            else {
+            else
+            {
                 Session["isLogged"] = "Y";
                 Session["username"] = Dt.Rows[0][1].ToString();
                 this.lblLogin.Text = Dt.Rows[0][1].ToString();
@@ -76,16 +80,14 @@ namespace NIKFORUM
             }
         }
 
-        protected void lBtnRegister_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("NewRegistration.aspx");
-        }
-
         protected void newQuestion_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewQuestion.aspx");
         }
 
-
+        protected void lBtnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NewRegistration.aspx");
+        }
     }
-}   
+}
