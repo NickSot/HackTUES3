@@ -11,6 +11,7 @@ namespace NIKFORUM
     {
         public static string sqlConnectionString = "Data Source=" + @"NIKOLA-PC\SQLNIK;" + "Initial catalog=" + "NIKFORUM;" + "Persist security info=True; User Id=" + "sa;" + "Password=" + "fori=0;" + "Connect Timeout=300";
         public static SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);
+        public static string currentQuestionId = "0";
         public static void main() { 
                        
         }

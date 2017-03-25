@@ -56,6 +56,8 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="AllQuestions.aspx" />
+    <Content Include="Answers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="NewQuestion.aspx" />
     <Content Include="NewRegistration.aspx" />
@@ -109,6 +111,20 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllQuestions.aspx.cs">
+      <DependentUpon>AllQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllQuestions.aspx.designer.cs">
+      <DependentUpon>AllQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Answers.aspx.cs">
+      <DependentUpon>Answers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Answers.aspx.designer.cs">
+      <DependentUpon>Answers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

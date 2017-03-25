@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AllQuestions.aspx.cs" Inherits="NIKFORUM.AllQuestions" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Answers.aspx.cs" Inherits="NIKFORUM.Answers" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -74,9 +74,10 @@ input[type=text], input[type=password] {
            margin: 5px 0 8px 0;
            cursor: pointer;
            position: relative;
-           right: 1077px;
-            top: -10px;
+           right: 996px;
+            top: -11px;
            border-radius: 15px;
+            width: 203px;
         }
 #btnHome:hover {
     opacity: 0.8;
@@ -233,6 +234,36 @@ font-family: Prime Regular
             height: 34px;
             width: 1199px;
         }
+    #btnHome0 {
+           border-style: none;
+           border-color: inherit;
+           border-width: medium;
+           background-color: #4CAF50;
+           color: white;
+           padding: 14px 20px;
+           margin: 5px 0 8px 0;
+           cursor: pointer;
+           position: relative;
+           right: 999px;
+            top: -11px;
+           border-radius: 15px;
+        }
+        .style28
+        {
+            width: 984px;
+        }
+        .style29
+        {
+            width: 12px;
+        }
+        .style30
+        {
+            width: 410px;
+        }
+        .style31
+        {
+            width: 1005px;
+        }
     </style>
 </head>
 <body bgcolor="#0099ff">
@@ -265,7 +296,8 @@ font-family: Prime Regular
     
     </div>
     <div id="divHeader">
-        <div id="divHeader1" style="position: relative; text-align: right; height: 88px; width:1200px; display: inline-block; top: 0px; left: 0px;">
+        <div id="divHeader1" 
+            style="position: relative; text-align: right; height: 88px; width:1200px; display: inline-block; top: 1px; left: 122px;">
 
             <div id="divHeaderInner" 
                 style="background-color: inherit; position: relative; height: 51px; width:110px; border-radius:15px; display: inline-block; top: 4px; left: 1203px;">
@@ -279,8 +311,11 @@ font-family: Prime Regular
                 <br />
                 <br />
         </div>
-            <asp:Button ID="btnHome" runat="server" Text="Home" Height="100px" 
+            
+            <asp:Button ID="btnHome0" runat="server" Text="Home" Height="100px" 
                 Width="123px" Font-Bold="True" Font-Size="14pt" onclick="btnHome_Click"/>
+            <asp:Button ID="btnHome" runat="server" Text="All Questions" Height="100px" 
+                Font-Bold="True" Font-Size="14pt" onclick="btnHome_Click1"/>
         </div>
       
     </div>
@@ -360,8 +395,8 @@ font-family: Prime Regular
         </div>
     </div>
     <div  id="divPost" 
-        style="position: relative; width: 1024; height: 500px; top: 33px; left: -11px;">
-        <table style="width: 100%; height: 407px;">
+        style="position: relative; width: 1024; height: 100px; top: 33px; left: -11px;">
+        <table style="width: 100%; height: 100px;">
             <tr>
                 <td class="style12">
                     &nbsp;</td>
@@ -381,7 +416,7 @@ font-family: Prime Regular
                             <asp:BoundField DataField="Id">
                             <ItemStyle Width="1px" Font-Size="1pt" />
                             </asp:BoundField>
-                            <asp:TemplateField HeaderText="All questions">
+                            <asp:TemplateField HeaderText="Question">
                                 <ItemTemplate>
                                     <table style="width: 1233px;">
                                         <tr>
@@ -408,9 +443,7 @@ font-family: Prime Regular
                                                 <%# Eval("PostSubject")%>
                                             </td>
                                             <td>
-                                                <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="LightGreen" 
-                                                    style="text-decoration: none" onclick="LBtnAnswer_Click">View or answer the question</asp:LinkButton>
-                                            </td>
+                                                &nbsp;</td>
                                         </tr>
                                         <tr>
                                             <td class="style13">
@@ -433,14 +466,97 @@ font-family: Prime Regular
                 <td class="style12">
                     &nbsp;</td>
                 <td>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <table style="width:100%;">
+                        <tr>
+                            <td class="style29">
+                                &nbsp;</td>
+                            <td class="style28">
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style29">
+                                &nbsp;</td>
+                            <td class="style28">
+                    <asp:TextBox ID="TxtAnswer" runat="server" Height="215px" MaxLength="1024" 
+                        Width="973px" TextMode="MultiLine">Add your answer here.. </asp:TextBox>
+                            </td>
+                            <td>
+                    <asp:Label ID="lblErr" runat="server"></asp:Label>
+                                <br />
+                                <br />
+                    <asp:Button ID="sendAnswer" runat="server" Text="Submit answer" onclick="sendAnswer_Click" 
+                                    Height="66px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style29">
+                                &nbsp;</td>
+                            <td class="style28">
+                    <asp:GridView ID="GridAnswers" runat="server" AutoGenerateColumns="False" 
+                        DataSourceID="SqlAnswers" Width="935px" 
+                        onselectedindexchanged="GridQuestions_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="Id">
+                            <ItemStyle Width="1px" Font-Size="1pt" />
+                            </asp:BoundField>
+                            <asp:TemplateField HeaderText="Answers">
+                                <ItemTemplate>
+                                    <table style="width: 965px;">
+                                        <tr>
+                                            <td class="style13">
+                                                &nbsp;</td>
+                                            <td class="style31">
+                                                <span>From: <%# Eval("AnswerNick") %>, Date: <%# Eval("AnswerDate") %></span>
+                                            </td>
+                                            <td class="style20">
+                                                &nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style13">
+                                                &nbsp;</td>
+                                            <td class="style31">
+                                                ----------------------------</td>
+                                            <td class="style20">
+                                                &nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style13">
+                                                &nbsp;</td>
+                                            <td class="style31">
+                                                <%# Eval("AnswerText")%>
+                                            </td>
+                                            <td>
+                                                &nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style13">
+                                                &nbsp;</td>
+                                            <td class="style31">
+                                                &nbsp;</td>
+                                            <td class="style20">
+                                                &nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                    </table>
                     </td>
                 <td>
                     &nbsp;</td>
             </tr>
         </table>
         <asp:SqlDataSource ID="SqlQuestions" runat="server"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlAnswers" runat="server"></asp:SqlDataSource>
     </div>
+    
     </form>
     
 </body>

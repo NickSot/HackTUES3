@@ -9,21 +9,17 @@ using System.Data.SqlClient;
 
 namespace NIKFORUM
 {
-    public partial class AllQuestions : System.Web.UI.Page
+    public partial class Answers : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlQuestions.ConnectionString = Middle.sqlConnectionString;
-            SqlQuestions.SelectCommand = "SELECT Id, SubjectNick, SubjectDate, PostSubject from RPost order by id desc";
+            SqlQuestions.SelectCommand = "SELECT Top 5 Id, SubjectNick, SubjectDate, PostSubject from RPost where Id = " + Middle.currentQuestionId + " order by id desc";
             GridQuestions.DataBind();
 
-            int counter = 0;
-
-            for (int i = 0; i < GridQuestions.Rows.Count; i++, counter++)
-            {
-                ((LinkButton)GridQuestions.Rows[i].FindControl("LBtnAnswer")).CommandArgument = GridQuestions.Rows[i].Cells[0].Text;
-
-            }
+            SqlAnswers.ConnectionString = Middle.sqlConnectionString;
+            SqlAnswers.SelectCommand = "SELECT Id, AnswerText, AnswerDate, AnswerNick, QuestionId from RAnswers where QuestionId = " + Middle.currentQuestionId + " order by id desc";
+            GridAnswers.DataBind();
 
             if (!IsPostBack)
             {
@@ -80,14 +76,14 @@ namespace NIKFORUM
             }
         }
 
-        protected void newQuestion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("NewQuestion.aspx");
-        }
-
         protected void lBtnRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewRegistration.aspx");
+        }
+
+        protected void newQuestion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("NewQuestion.aspx");
         }
 
         protected void btnHome_Click(object sender, EventArgs e)
@@ -100,10 +96,36 @@ namespace NIKFORUM
 
         }
 
-        protected void LBtnAnswer_Click(object sender, EventArgs e)
+        protected void sendAnswer_Click(object sender, EventArgs e)
         {
-            Middle.currentQuestionId = ((LinkButton)sender).CommandArgument;
-            Response.Redirect("Answers.aspx");
+            if (Session["isLogged"].ToString() == "N")
+            {
+                this.lblErr.ForeColor = System.Drawing.Color.Red;
+                this.lblErr.Text = "You are not logged in...";
+                return;
+            }
+            if (this.TxtAnswer.Text.Trim() == "")
+            {
+                this.lblErr.ForeColor = System.Drawing.Color.Red;
+                this.lblErr.Text = "This answer is empty...";
+                return;
+            }
+            this.lblErr.ForeColor = System.Drawing.Color.Blue;
+            this.lblErr.Text = "Successfully posted an answer!!!";
+            
+            string a = Session["username"].ToString();
+            SqlCommand cmd = new SqlCommand("Insert RAnswers (AnswerText, AnswerDate, AnswerNick, QuestionId) Select '" + this.TxtAnswer.Text.Replace("\r\n", "<br/>") + "', GetDate(), '" + Session["username"].ToString() + "', " + Middle.currentQuestionId , Middle.getConnection());
+            cmd.ExecuteNonQuery();
+            Middle.sqlConnection.Close();
+            this.TxtAnswer.Text = "";
+            this.GridAnswers.DataBind();
         }
+
+        protected void btnHome_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("AllQuestions.aspx");
+        }
+
+        
     }
 }

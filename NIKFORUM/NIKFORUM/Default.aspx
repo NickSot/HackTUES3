@@ -64,16 +64,17 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-buttonn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-buttonn:hover {
+#btnAllQuestions {
+        border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+    }
+btnAllQusetions:hover {
     opacity: 0.8;
 }
 .cancelbtn {
@@ -255,9 +256,7 @@ font-family: Prime Regular
     
     </div>
     <div id="divHeader">
-        <div id="divHeader1" 
-            
-            
+        <div id="divHeader1"
             style="position: relative; text-align: right; height: 88px; width:1200px; display: inline-block; top: 0px; left: 0px;">
             <div id="divHeaderInner" 
                 style="background-color: inherit; position: relative; height: 51px; width:110px; border-radius:15px; display: inline-block; top: 4px; left: 1203px;">
@@ -282,9 +281,14 @@ font-family: Prime Regular
     <center><b><h2>Wire is a social service that facilitates the exchange of experience and information between different programmers. It is very easy to use!</h2>
         <p>&nbsp;</p>
         <p>
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="newQuestion" runat="server" Height="48px" 
                         onclick="newQuestion_Click" Text="Submit question!" 
                 Width="142px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="btnAllQuestions" runat="server" Text="All questions" 
+                        Height="70px" onclick="btnAllQuestions_Click" Width="159px" />
+        </b>
                 </p>
         </b></center>
     
@@ -365,7 +369,8 @@ font-family: Prime Regular
                     &nbsp;</td>
                 <td>
                     <asp:GridView ID="GridQuestions" runat="server" AutoGenerateColumns="False" 
-                        DataSourceID="SqlQuestions" Width="1218px">
+                        DataSourceID="SqlQuestions" Width="1218px" 
+                        onselectedindexchanged="GridQuestions_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="Id">
                             <ItemStyle Width="1px" Font-Size="1pt" />
@@ -397,7 +402,8 @@ font-family: Prime Regular
                                                 <%# Eval("PostSubject")%>
                                             </td>
                                             <td>
-                                                <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="LightGreen" style="text-decoration: none">View or answer the question</asp:LinkButton>
+                                                <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="LightGreen" 
+                                                    style="text-decoration: none" onclick="LBtnAnswer_Click">View or answer the question</asp:LinkButton>
                                             </td>
                                         </tr>
                                         <tr>

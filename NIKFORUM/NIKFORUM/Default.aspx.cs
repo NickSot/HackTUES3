@@ -86,6 +86,22 @@ namespace NIKFORUM
             Response.Redirect("NewQuestion.aspx");
         }
 
+        protected void btnAllQuestions_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AllQuestions.aspx");
+        }
+
+        protected void GridQuestions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void LBtnAnswer_Click(object sender, EventArgs e)
+        {
+            Middle.currentQuestionId = ((LinkButton)sender).CommandArgument;
+            Response.Redirect("Answers.aspx");
+        }
+
 
     }
 }   
