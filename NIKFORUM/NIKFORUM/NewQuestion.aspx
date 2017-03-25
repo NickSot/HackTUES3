@@ -187,8 +187,8 @@
                         Width="1153px" TextMode="MultiLine">Add your question here.. </asp:TextBox>
                 </td>
                 <td>
-                    <asp:Button ID="btnSubmit" runat="server" Height="54px" Text="Submit" 
-                        Width="120px" onclick="btnSubmit_Click" />
+                    <asp:Button ID="btnSubmit" runat="server" Height="53px" Text="Submit" 
+                        Width="97px" onclick="btnSubmit_Click" />
                     <br />
                     <br />
                     <br />
@@ -197,7 +197,8 @@
                     <br />
                     <br />
                     <br />
-                    <asp:Button ID="btnHome" runat="server" onclick="btnHome_Click" Text="Home" />
+                    <asp:Button ID="btnHome" runat="server" onclick="btnHome_Click" Text="Back" 
+                        Height="45px" Width="105px" />
                 </td>
             </tr>
             <tr>

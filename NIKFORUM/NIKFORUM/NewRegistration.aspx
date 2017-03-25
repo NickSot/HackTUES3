@@ -107,7 +107,7 @@
                     <td class="style6">
                         &nbsp;</td>
                     <td class="style2">
-                        <asp:Button ID="btnHome" runat="server" Text="Home" onclick="btnHome_Click" />
+                        <asp:Button ID="btnHome" runat="server" Text="Close" onclick="btnHome_Click" />
                     </td>
                     <td class="style5">
                         <asp:Button ID="btnRegister" runat="server" Height="28px" style="margin-left: 0px" 

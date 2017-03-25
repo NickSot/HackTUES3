@@ -13,7 +13,7 @@ namespace NIKFORUM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Middle.previousPage = "NewQuestion.aspx";
             if (!IsPostBack)
             {
                 if (Session["username"] == null)
@@ -38,7 +38,21 @@ namespace NIKFORUM
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            switch (Middle.pageCounter) { 
+                case 1:
+                    Response.Redirect("Default.aspx");
+                    break;
+                case 2:
+                    Response.Redirect("AllQuestions.aspx");
+                    break;
+                case 3:
+                    Response.Redirect("Answers.aspx");
+                    break;
+                default:
+                    Response.Redirect("Default.aspx");
+                    break;
+
+            }
         }
 
         protected void lbtnLogin_Click(object sender, EventArgs e)

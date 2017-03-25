@@ -61,7 +61,6 @@
     <Content Include="Default.aspx" />
     <Content Include="NewQuestion.aspx" />
     <Content Include="NewRegistration.aspx" />
-    <Content Include="PostForm.aspx" />
     <Content Include="Styles\Site.css" />
     <Content Include="Old_Default.aspx" />
     <Content Include="Global.asax" />
@@ -157,13 +156,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="PostForm.aspx.cs">
-      <DependentUpon>PostForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PostForm.aspx.designer.cs">
-      <DependentUpon>PostForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

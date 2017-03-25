@@ -18,7 +18,7 @@ namespace NIKFORUM
 
         protected void btnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect(Middle.previousPage);
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -54,6 +54,7 @@ namespace NIKFORUM
             cmd.ExecuteNonQuery();
             this.lblErrRegister.ForeColor = System.Drawing.Color.White;
             this.lblErrRegister.Text = "Successfully created a user! Please proceed to login...";
+            Response.Redirect(Middle.previousPage);
         }
     }
 }

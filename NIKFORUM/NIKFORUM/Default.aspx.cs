@@ -13,6 +13,9 @@ namespace NIKFORUM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Middle.pageCounter = 1;
+            Middle.previousPage = "Default.aspx";
+
             SqlQuestions.ConnectionString = Middle.sqlConnectionString;
             SqlQuestions.SelectCommand = "SELECT Top 5 Id, SubjectNick, SubjectDate, PostSubject from RPost order by id desc";
             GridQuestions.DataBind();
