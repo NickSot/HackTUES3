@@ -33,6 +33,14 @@ div#divHeaderInner {
 		color: white;
 }
 
+#gridTable
+{
+    border-radius: 25px;
+    background: url(http://kingofwallpapers.com/lined-paper-wallpaper/lined-paper-wallpaper-010.jpg);
+    border: none; 
+    opacity: 0.7; 
+}
+
 #lBtnRegister
 {
     text-decoration: none;    
@@ -364,7 +372,7 @@ font-family: Prime Regular
     </div>
     <div  id="divPost" 
         style="position: relative; width: 1024; height: 500px; top: 33px; left: -11px;">
-        <table style="width: 100%; height: 407px;">
+        <table id="GridTable" style="width: 100%; height: 407px;">
             <tr>
                 <td class="style12">
                     &nbsp;</td>

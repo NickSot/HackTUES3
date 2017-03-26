@@ -83,9 +83,10 @@ input[type=text], input[type=password] {
     opacity: 0.8;
 }
 
-#gridTable
+#GridTable
 {
-    border-radius: 25px;  
+    background: url(http://kingofwallpapers.com/lined-paper-wallpaper/lined-paper-wallpaper-010.jpg);
+    border: none; 
 }
 
 .cancelbtn {
@@ -310,7 +311,7 @@ font-family: Prime Regular
     
     <div id="divLogin" style="height: 100%; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8; display: none;">
         <div style="background-color: #333; position: relative; top: -50%; height: 250px; width:300px; border-radius:15px; display: inline-block;">
-            <table style="width: 100%; height: 228px;">
+            <table id="GridTable"style="width: 100%; height: 228px;">
                 <tr>
                     <td class="style3">
                     </td>
@@ -383,7 +384,7 @@ font-family: Prime Regular
             <tr>
                 <td class="style12">
                     &nbsp;</td>
-                <td>
+                <td id="GridTd">
                     <asp:GridView ID="GridQuestions" runat="server" AutoGenerateColumns="False" 
                         DataSourceID="SqlQuestions" Width="1218px" 
                         onselectedindexchanged="GridQuestions_SelectedIndexChanged">
@@ -393,12 +394,12 @@ font-family: Prime Regular
                             </asp:BoundField>
                             <asp:TemplateField HeaderText="Newest 5 questions">
                                 <ItemTemplate>
-                                    <table style="width: 1233px;">
+                                    <table  id="GridTable" style="width: 1233px;">
                                         <tr>
                                             <td class="style13">
                                                 &nbsp;</td>
                                             <td class="style23">
-                                                <span>From: <%# Eval("SubjectNick") %>, Date: <%# Eval("SubjectDate") %></span>
+                                                <span style="border-style: none">From: <%# Eval("SubjectNick") %>, Date: <%# Eval("SubjectDate") %></span>
                                             </td>
                                             <td class="style20">
                                                 &nbsp;</td>
@@ -419,7 +420,7 @@ font-family: Prime Regular
                                             </td>
                                             <td>
                                                 <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="Black" 
-                                                    style="text-decoration: none" onclick="LBtnAnswer_Click">View or answer the question</asp:LinkButton>
+                                                    style="text-decoration: none" onclick="LBtnAnswer_Click" Font-Bold="True">View or answer the question</asp:LinkButton>
                                             </td>
                                         </tr>
                                         <tr>

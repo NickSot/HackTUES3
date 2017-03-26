@@ -6,6 +6,13 @@
 <head id="Head1" runat="server">
     <title></title>
     <style type="text/css">
+body {
+    background: url(https://images5.alphacoders.com/695/695931.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 div#divHeader {
     overflow: hidden;
     border: none;
@@ -203,7 +210,7 @@ div#divHeaderInner {
                     &nbsp;</td>
                 <td class="style13">
                     <asp:TextBox ID="TxtQuestion" runat="server" Height="240px" MaxLength="1024" 
-                        Width="1153px" TextMode="MultiLine">Add your question here.. </asp:TextBox>
+                        Width="1153px" TextMode="MultiLine" style="opacity: 0.7;">Add your statement here...</asp:TextBox>
                 </td>
                 <td>
                     <asp:Button ID="btnSubmit" runat="server" Height="53px" Text="Submit" 
