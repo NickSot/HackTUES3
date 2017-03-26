@@ -84,10 +84,10 @@ namespace NIKFORUM
             Response.Redirect("NewRegistration.aspx");
         }
 
-        protected void newQuestion_Click(object sender, EventArgs e)
+        /*protected void newQuestion_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewQuestion.aspx");
-        }
+        }*/
 
         protected void btnAllQuestions_Click(object sender, EventArgs e)
         {

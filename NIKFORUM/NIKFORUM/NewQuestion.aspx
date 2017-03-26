@@ -6,6 +6,23 @@
 <head id="Head1" runat="server">
     <title></title>
     <style type="text/css">
+div#divHeader {
+    overflow: hidden;
+    border: none;
+    background-color: #333;
+}
+/* Style the buttons inside the tab */
+div#divHeaderInner {
+    background-color: #333;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+		color: white;
+}
         .style1
         {
             width: 20px;
@@ -93,16 +110,18 @@
         </asp:ScriptManager>
     
     </div>
-    <div id="divHeader" style="height: 80px; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8;">
+    <div id="divHeader" 
+        style="height: 80px; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8; top: 53px; left: 0px;">
         <div id="divHeader1" style="position: relative; text-align: right; height: 80px; width:1200px; display: inline-block;">
-            <div id="divHeaderInner" style="background-color: white; position: relative; height: 80px; width:150px; border-radius:15px; display: inline-block;">
-                <asp:LinkButton ID="lBtnRegister" runat="server" onclick="lBtnRegister_Click">Register</asp:LinkButton>
+            <div id="divHeaderInner" 
+                style="background-color: #333; position: relative; height: 80px; width:150px; border-radius:15px; display: inline-block; top: -15px; left: 1017px;">
+                <asp:LinkButton ID="lBtnRegister" runat="server" onclick="lBtnRegister_Click" style="text-decoration: none; color: White;">Register</asp:LinkButton>
                 <br />
                 <asp:Label ID="lblLogin" runat="server"></asp:Label>
                 <br />
                 <br />
                 <asp:LinkButton ID="lbtnLogin" runat="server" onclick="lbtnLogin_Click" 
-                    onclientclick="return showLogin();">Login</asp:LinkButton>
+                    onclientclick="return showLogin();" style="text-decoration: none; color: White;">Login</asp:LinkButton>
                 <br />
         </div>
         </div>

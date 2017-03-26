@@ -8,8 +8,35 @@
     <style type="text/css">
         body 
         {
-            background-image: 
+            background: url(http://i.imgur.com/FZ4seLw.jpg) no-repeat center center fixed; 
         }
+    #btnRegister {
+        border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0 1px 0;
+            cursor: pointer;
+    }
+    #btnRegister:hover {
+        opacity: 0.8;
+    }
+    #btnHome {
+        border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            cursor: pointer;
+            height: 50px;
+    }
+    #btnHome:hover {
+        opacity: 0.8;
+    }
         .style2
         {
             width: 167px;
@@ -42,18 +69,12 @@
     </div>
     <div id="divHeader" style="height: 80px; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8;">
         <div id="divHeader1" style="position: relative; text-align: right; height: 80px; width:1200px; display: inline-block;">
-            <div id="divHeaderInner" style="background-color: white; position: relative; height: 80px; width:150px; border-radius:15px; display: inline-block;">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-        </div>
         </div>
       
     </div>
     <div id="divRegister" style="height: 100%; width: 100%; position: relative; top: 120px; text-align: center; z-index: 10000; opacity: 0.8;">
         <div style="background-color: #333; position: relative; top: 25%; height: 250px; width:400px; border-radius:15px; display: inline-block;">
-            <table style="width: 100%; height: 228px;">
+            <table style="width: 100%; height: 281px;">
                 <tr>
                     <td class="style6">
                     </td>
@@ -110,8 +131,9 @@
                         <asp:Button ID="btnHome" runat="server" Text="Close" onclick="btnHome_Click" />
                     </td>
                     <td class="style5">
-                        <asp:Button ID="btnRegister" runat="server" Height="28px" style="margin-left: 0px" 
-                            Text="Register" Width="86px" onclick="btnRegister_Click" />
+                        <asp:Button ID="btnRegister" runat="server" Height="50px" style="margin-left: 0px" 
+                            Text="Register" Width="112px" onclick="btnRegister_Click" />
+                        <br />
                     </td>
                 </tr>
                 <tr>

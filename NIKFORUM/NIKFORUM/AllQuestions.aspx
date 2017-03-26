@@ -7,7 +7,11 @@
     <title></title>
     <style type="text/css">
 body {
-    background-color: #66b53ff;
+    background: url(http://minimal-wallpapers.com/wp-content/uploads/2015/09/everest-minimalist-wallpaper-light.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Style the tab */
@@ -292,9 +296,8 @@ font-family: Prime Regular
     <center><b><h2>Wire is a social service that facilitates the exchange of experience and information between different programmers. It is very easy to use!</h2>
         <p>&nbsp;</p>
         <p>
-                    <asp:Button ID="newQuestion" runat="server" Height="48px" 
-                        onclick="newQuestion_Click" Text="Submit question!" 
-                Width="142px" />
+                    <a href = "NewQuestion.aspx"> <img src="http://i.imgur.com/0SX66gu.png" alt="" 
+                style="height: 84px; width: 213px;"/></a></b>
                 </p>
         </b></center>
     

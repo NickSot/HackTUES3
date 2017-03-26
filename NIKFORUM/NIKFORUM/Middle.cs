@@ -9,6 +9,7 @@ namespace NIKFORUM
 {
     public static class Middle
     {
+        
         public static int pageCounter = 0;
         public static string sqlConnectionString = "Data Source=" + @"NIKOLA-PC\SQLNIK;" + "Initial catalog=" + "NIKFORUM;" + "Persist security info=True; User Id=" + "sa;" + "Password=" + "fori=0;" + "Connect Timeout=300";
         public static SqlConnection sqlConnection = new SqlConnection(sqlConnectionString);
@@ -27,9 +28,8 @@ namespace NIKFORUM
             return sqlConnection;
         }
 
-
-
-        
-
+        /*public static void AI() { 
+            string AIArray = 
+        }*/
     }
 }

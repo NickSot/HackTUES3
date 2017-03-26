@@ -7,7 +7,11 @@
     <title></title>
     <style type="text/css">
 body {
-    background-color: #66b53ff;
+    background: url(http://minimal-wallpapers.com/wp-content/uploads/2015/09/everest-minimalist-wallpaper-light.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Style the tab */
@@ -73,10 +77,17 @@ input[type=text], input[type=password] {
             padding: 14px 20px;
             margin: 8px 0;
             cursor: pointer;
+            border-radius: 15px;
     }
-btnAllQusetions:hover {
+#btnAllQusetions:hover {
     opacity: 0.8;
 }
+
+#gridTable
+{
+    border-radius: 25px;  
+}
+
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
@@ -224,6 +235,15 @@ font-family: Prime Regular
         {
             height: 13px;
         }
+        .style27
+        {
+            width: 150px;
+            height: 25px;
+        }
+        .style28
+        {
+            height: 25px;
+        }
     </style>
 </head>
 <body bgcolor="#0099ff">
@@ -279,17 +299,13 @@ font-family: Prime Regular
         ImageUrl="https://scontent-fra3-1.xx.fbcdn.net/v/t34.0-12/17505987_1254411984634706_1292581433_n.png?oh=1d2ac0e6af7f8bfe662589b1c5a6960d&amp;oe=58D990C2" style="height: 219px; width: 422px;"/></center>
     <br/>
     <center><b><h2>Wire is a social service that facilitates the exchange of experience and information between different programmers. It is very easy to use!</h2>
-        <p>&nbsp;</p>
-        <p>
-                    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="newQuestion" runat="server" Height="48px" 
-                        onclick="newQuestion_Click" Text="Submit question!" 
-                Width="142px" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p style="height: 101px"><b><a href="NewQuestion.aspx" style="text-decoration: none;">
+            <img src="http://i.imgur.com/0SX66gu.png" alt="" 
+                style="height: 94px; width: 213px;"></a></b>&nbsp;<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnAllQuestions" runat="server" Text="All questions" 
                         Height="70px" onclick="btnAllQuestions_Click" Width="159px" />
-        </b>
-                </p>
+        </b></p>
         </b></center>
     
     <div id="divLogin" style="height: 100%; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8; display: none;">
@@ -355,14 +371,14 @@ font-family: Prime Regular
     </div>
     <div  id="divPost" 
         style="position: relative; width: 1024; height: 500px; top: 33px; left: -11px;">
-        <table style="width: 100%; height: 407px;">
+        <table id="gridTable" style="width: 100%; height: 407px;">
             <tr>
-                <td class="style12">
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
-                <td>
-                    &nbsp;</td>
+                <td class="style27">
+                    </td>
+                <td class="style28">
+                    </td>
+                <td class="style28">
+                    </td>
             </tr>
             <tr>
                 <td class="style12">
@@ -402,7 +418,7 @@ font-family: Prime Regular
                                                 <%# Eval("PostSubject")%>
                                             </td>
                                             <td>
-                                                <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="LightGreen" 
+                                                <asp:LinkButton ID="LBtnAnswer" runat="server" ForeColor="Black" 
                                                     style="text-decoration: none" onclick="LBtnAnswer_Click">View or answer the question</asp:LinkButton>
                                             </td>
                                         </tr>
