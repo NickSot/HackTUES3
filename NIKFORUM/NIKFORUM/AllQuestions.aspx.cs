@@ -13,6 +13,7 @@ namespace NIKFORUM
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Каунтърът се слага, за да може от регистрационната страница да се върнем към миналата
             Middle.pageCounter = 2;
             Middle.previousPage = "AllQuestions.aspx";
 
@@ -27,7 +28,7 @@ namespace NIKFORUM
                 ((LinkButton)GridQuestions.Rows[i].FindControl("LBtnAnswer")).CommandArgument = GridQuestions.Rows[i].Cells[0].Text;
 
             }
-
+            //Проверка за първо влизане в страницата и инициализация на Session променливите...
             if (!IsPostBack)
             {
                 if (Session["username"] == null)
@@ -49,7 +50,7 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = true;
             }
         }
-
+        //Показване и скриване на логин формата
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
             if (this.lbtnLogin.Text == "Logout")
@@ -62,6 +63,7 @@ namespace NIKFORUM
             }
         }
 
+        //Логика на Логин и проверки за невалидност
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
@@ -82,17 +84,17 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = false;
             }
         }
-
+        //Препратка към Нов въпрос
         protected void newQuestion_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewQuestion.aspx");
         }
-
+        //Препратка към регистрационната страница
         protected void lBtnRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewRegistration.aspx");
         }
-
+        //Препратка към предната страница
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");

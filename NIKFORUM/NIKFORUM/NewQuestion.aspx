@@ -135,7 +135,7 @@ div#divHeaderInner {
       
     </div>
     <div id="divLogin" style="height: 100%; width: 100%; position: fixed; text-align: center; z-index: 10000; opacity: 0.8; display: none;">
-        <div style="background-color: blue; position: relative; top: 25%; height: 250px; width:300px; border-radius:15px; display: inline-block;">
+        <div style="background-color: #333; position: relative; top: -50%; height: 250px; width:300px; border-radius:15px; display: inline-block;">
             <table style="width: 100%; height: 228px;">
                 <tr>
                     <td class="style3">

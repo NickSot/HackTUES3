@@ -96,7 +96,8 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = false;
             }
         }
-
+        
+        //Логика на събмит бутона за въпроса
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             if (Session["isLogged"].ToString() == "N") {

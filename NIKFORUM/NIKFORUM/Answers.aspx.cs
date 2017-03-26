@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+//Клас за отговорите на въпросите
+
 namespace NIKFORUM
 {
     public partial class Answers : System.Web.UI.Page
@@ -44,7 +46,7 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = true;
             }
         }
-
+        //Показване и скриване на логин формата
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
             if (this.lbtnLogin.Text == "Logout")
@@ -57,6 +59,7 @@ namespace NIKFORUM
             }
         }
 
+        //Логика на логин
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();
@@ -77,17 +80,18 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = false;
             }
         }
-
+        //Препратка към регистрацията...
         protected void lBtnRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewRegistration.aspx");
         }
 
+        //Препратката към страницата за нов въпрос
         protected void newQuestion_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewQuestion.aspx");
         }
-
+        //Логика на Хоум бутона
         protected void btnHome_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
@@ -98,6 +102,7 @@ namespace NIKFORUM
 
         }
 
+        //Логика за изпращане на отговор и проверки за Логина
         protected void sendAnswer_Click(object sender, EventArgs e)
         {
             if (Session["isLogged"].ToString() == "N")
@@ -123,6 +128,7 @@ namespace NIKFORUM
             this.GridAnswers.DataBind();
         }
 
+        //Препратка към Всички въпроси
         protected void btnHome_Click1(object sender, EventArgs e)
         {
             Response.Redirect("AllQuestions.aspx");
