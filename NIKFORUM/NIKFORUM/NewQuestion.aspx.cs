@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
+//Това е класът, съдържащ логиката на задаване на въпросите
+
 namespace NIKFORUM
 {
     public partial class NewQuestion : System.Web.UI.Page
@@ -14,6 +16,7 @@ namespace NIKFORUM
         protected void Page_Load(object sender, EventArgs e)
         {
             Middle.previousPage = "NewQuestion.aspx";
+            //Проверка за първо влизане в страницата и инициализация на Session променливите
             if (!IsPostBack)
             {
                 if (Session["username"] == null)
@@ -35,7 +38,7 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = true;
             }
         }
-
+        //Event, който връща към предишната страница
         protected void btnHome_Click(object sender, EventArgs e)
         {
             switch (Middle.pageCounter) { 
@@ -54,7 +57,7 @@ namespace NIKFORUM
 
             }
         }
-
+        //Проверка и извеждане на формата за логин
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
             if (this.lbtnLogin.Text == "Logout")
@@ -66,12 +69,13 @@ namespace NIKFORUM
                 this.lBtnRegister.Visible = true;
             }
         }
-
+        //Пренос към регистрационната страница
         protected void lBtnRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("NewRegistration.aspx");
         }
 
+        //Логика на логин
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             DataTable Dt = new DataTable();

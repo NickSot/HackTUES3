@@ -299,6 +299,12 @@ font-family: Prime Regular
     <asp:Image ID="Image1" runat="server" 
         ImageUrl="https://scontent-fra3-1.xx.fbcdn.net/v/t34.0-12/17505987_1254411984634706_1292581433_n.png?oh=1d2ac0e6af7f8bfe662589b1c5a6960d&amp;oe=58D990C2" style="height: 219px; width: 422px;"/></center>
     <br/>
+    <center><table>
+	<tr>
+	<td class="menubut"><a href="python.html"><img src="http://i.imgur.com/BCxdoiL.png" style="width:160px;height:106px;padding-right:30px;"></a></td>
+	<td class="menubut"><a href="c.html"><img src="http://i.imgur.com/rv7CT2l.png" style="width:166px;height:75px;padding-right:30px"></a></td>
+	<td class="menubut"><a href="c++.html"><img src="http://i.imgur.com/Asn17XD.png" style="width:182px;height:91px;padding-right:30px"></a></td>
+	<td class="menubut"><a href="html.html"><img src="http://i.imgur.com/IJBsXzj.png" style="width:140px;height:122px;padding-right:30px"></a></td></tr></table></center>
     <center><b><h2>Wire is a social service that facilitates the exchange of experience and information between different programmers. It is very easy to use!</h2>
         <p style="height: 101px"><b><a href="NewQuestion.aspx" style="text-decoration: none;">
             <img src="http://i.imgur.com/0SX66gu.png" alt="" 
